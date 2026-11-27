@@ -1,7 +1,7 @@
 {
   "section": "Life at Shaare Tefila",
-  "updated": "2026-11-26T23:50:11.115Z",
-  "fingerprint": "../drive-starter/Life at Shaare Tefila/1 - Our community, all ages together.jpg:340806-1795736762349:1:Our community, all ages together|../drive-starter/Life at Shaare Tefila/2 - Chavaya Religious School.jpg:269721-1795736762521:2:Chavaya Religious School|../drive-starter/Life at Shaare Tefila/3 - Hanukkah.jpg:344494-1795736762693:3:Hanukkah|../drive-starter/Life at Shaare Tefila/4 - Music and celebration.jpg:171977-1795736762698:4:Music and celebration|../drive-starter/Life at Shaare Tefila/5 - Connected to Israel.jpg:180560-1795736762699:5:Connected to Israel|more:false",
+  "updated": "2026-11-27T13:21:10.135Z",
+  "fingerprint": "1X3hXTzV5jVwEAaSQaI7tgz__Qb58261c:c23e6b0b20a95395f66effd0665adf63:1:Our community, all ages together|1iOYqNJ4cGLiSOqaDU_MYzhfJpA7W2r1j:178d39ae0a5c9af5a9a4811e96c9be23:2:Chavaya Religious School|1GXj6G0F10ZV1atDprCZm2jwVnJGm88Z6:34909215dafdc71125d86539a4e39ce7:3:Hanukkah|1tzbcwoqdvyAHMWqtQZYxgQ34l31gzflV:82426f40699cae2783dba6df320cdfd5:4:Connected to Israel|1NHtGC0rJE0ftePLgX5OlnKxKiSz0Jw8X:5349b24fd086213d1e2bfc445eb569e1:5:Music and celebration|more:false",
   "moreInFolder": false,
   "photos": [
     {
@@ -30,19 +30,19 @@
     },
     {
       "order": 4,
-      "caption": "Music and celebration",
-      "src": "sections/home/life-at/04-music-and-celebration-1200.jpg",
-      "srcset": "sections/home/life-at/04-music-and-celebration-600.jpg 600w, sections/home/life-at/04-music-and-celebration-1200.jpg 1200w",
+      "caption": "Connected to Israel",
+      "src": "sections/home/life-at/04-connected-to-israel-1200.jpg",
+      "srcset": "sections/home/life-at/04-connected-to-israel-600.jpg 600w, sections/home/life-at/04-connected-to-israel-1200.jpg 1200w",
       "width": 1200,
-      "height": 800
+      "height": 900
     },
     {
       "order": 5,
-      "caption": "Connected to Israel",
-      "src": "sections/home/life-at/05-connected-to-israel-1200.jpg",
-      "srcset": "sections/home/life-at/05-connected-to-israel-600.jpg 600w, sections/home/life-at/05-connected-to-israel-1200.jpg 1200w",
+      "caption": "Music and celebration",
+      "src": "sections/home/life-at/05-music-and-celebration-1200.jpg",
+      "srcset": "sections/home/life-at/05-music-and-celebration-600.jpg 600w, sections/home/life-at/05-music-and-celebration-1200.jpg 1200w",
       "width": 1200,
-      "height": 900
+      "height": 800
     }
   ]
 }
