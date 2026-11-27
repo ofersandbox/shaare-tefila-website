@@ -1,6 +1,15 @@
 // CHECK 2: the whole site, tested in a browser at laptop and phone sizes.
 // If any test fails, the site is NOT published and the office is told.
 import { test, expect } from "@playwright/test";
+import { existsSync } from "node:fs";
+
+// The resized gallery photos (sections/gallery/built/) are made on GitHub and are not in
+// the repo, so a fresh copy on a laptop has none. Off GitHub (no CI variable) and without
+// that folder, the gallery checks skip the photo files but still test everything else.
+// On GitHub the photos are always required.
+const NO_LOCAL_GALLERY_PHOTOS =
+  !process.env.CI && !existsSync(new URL("../sections/gallery/built/", import.meta.url));
+const GALLERY_PHOTOS_NOTE = "gallery photos are built on GitHub, not on this computer";
 
 const PAGES = ["home", "about", "worship", "learn", "involved", "news", "give", "visit", "gallery", "calendar"];
 
@@ -81,6 +90,7 @@ test("every link and image within the site works", async ({ page, request }) => 
   });
   const broken = [];
   for (const u of urls) {
+    if (NO_LOCAL_GALLERY_PHOTOS && u.startsWith("sections/gallery/built/")) continue;
     const res = await request.head(u);
     if (!res.ok()) broken.push(`${u} (${res.status()})`);
   }
@@ -103,7 +113,9 @@ test("Photo gallery: album list, show/hide buttons, photos load", async ({ page,
   const first = page.locator("#galAlbums .album").first();
   await expect(first.locator(".album-toggle")).toHaveAttribute("aria-expanded", "true");
   const img = first.locator(".gal img").first();
-  await expect.poll(() => img.evaluate((el) => el.complete && el.naturalWidth), { message: "first gallery photo did not load" }).toBeGreaterThan(0);
+  if (!NO_LOCAL_GALLERY_PHOTOS) {
+    await expect.poll(() => img.evaluate((el) => el.complete && el.naturalWidth), { message: "first gallery photo did not load" }).toBeGreaterThan(0);
+  }
 
   // Its button hides the photos and shows them again.
   await first.locator(".album-toggle").click();
@@ -135,6 +147,7 @@ test("Photo gallery: album list, show/hide buttons, photos load", async ({ page,
 
 test("every gallery photo file exists", async ({ request }) => {
   test.skip(test.info().project.name !== "laptop", "checked once, at laptop size");
+  test.skip(NO_LOCAL_GALLERY_PHOTOS, GALLERY_PHOTOS_NOTE);
   const data = await (await request.get("sections/gallery/albums.json")).json();
   const missing = [];
   for (const a of data.albums) for (const p of a.photos) for (const u of [p.thumb, p.src]) {
