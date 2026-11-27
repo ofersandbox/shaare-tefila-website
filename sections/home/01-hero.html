@@ -1,0 +1,68 @@
+  <div class="hero">
+    <svg class="scene" viewBox="0 0 1200 640" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--sky1)"/><stop offset="1" stop-color="var(--sky2)"/></linearGradient>
+        <linearGradient id="wall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ecdfc4"/><stop offset="1" stop-color="#d6c4a1"/></linearGradient>
+        <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe2a8"/><stop offset="1" stop-color="#e8964f"/></linearGradient>
+        <pattern id="stone" width="14" height="12" patternUnits="userSpaceOnUse"><rect width="14" height="12" fill="#c4ad87"/><rect width="8" height="5.5" fill="#d9c5a1"/><rect x="8.5" width="5.5" height="5.5" fill="#b49970"/><rect y="6" width="4.5" height="6" fill="#b89e75"/><rect x="5" y="6" width="9" height="6" fill="#d0ba94"/></pattern>
+        <clipPath id="vent"><path d="M294 20A46 46 0 0 1 386 20Z"/></clipPath>
+        <clipPath id="walk"><path d="M360 575H450L565 640H245Z"/></clipPath>
+        <g id="tree"><ellipse cx="0" cy="-58" rx="38" ry="52" fill="#2f5a3f"/><ellipse cx="-12" cy="-70" rx="22" ry="30" fill="#3f7350"/><rect x="-4" y="-12" width="8" height="14" fill="#4a3526"/></g>
+        <g id="gridwin"><rect width="34" height="76" fill="#cfd3d6"/><rect x="3" y="3" width="28" height="70" fill="url(#glass)" class="glow"/><path d="M17 3V73M3 20.5H31M3 38H31M3 55.5H31" stroke="#cfd3d6" stroke-width="2.5"/></g>
+        <g id="tallwin"><rect width="34" height="86" fill="#cfd3d6"/><rect x="3" y="3" width="28" height="80" fill="url(#glass)" class="glow"/><path d="M3 30H31" stroke="#cfd3d6" stroke-width="2.5"/></g>
+      </defs>
+      <rect width="1200" height="640" fill="url(#sky)"/>
+      <circle cx="930" cy="250" r="54" fill="var(--sun)" opacity=".9"/>
+      <path d="M0 470 C180 420 320 440 470 455 S800 410 1200 440 V640H0z" fill="#5d7a8f" opacity=".55"/>
+      <path d="M0 505 C200 480 380 498 600 496 S960 470 1200 490 V640H0z" fill="#46664f"/>
+      <use href="#tree" x="668" y="566"/><use href="#tree" x="935" y="560"/>
+      <!-- the Shaare Tefila building, drawn from a street-level photo -->
+      <g transform="translate(150 435) scale(.7)">
+        <rect x="330" y="2" width="340" height="16" fill="#b8735b"/>
+        <rect x="0" y="18" width="700" height="182" fill="url(#wall)"/>
+        <rect x="-2" y="13" width="704" height="6" fill="#cbbb9a"/>
+        <g stroke="#8a6f45" stroke-opacity=".14" stroke-width="1.5"><path d="M70 19V200M140 19V200M210 19V74M530 19V200M600 19V200M0 112H205M525 112H700"/></g>
+        <rect x="250" y="-28" width="180" height="47" fill="#eadcc0"/>
+        <rect x="247" y="-33" width="186" height="6" fill="#cbbb9a"/>
+        <path d="M294 20A46 46 0 0 1 386 20Z" fill="#d6c6a6"/>
+        <g clip-path="url(#vent)" stroke="#a3926f" stroke-width="2.2"><path d="M290 -21H390M290 -15H390M290 -9H390M290 -3H390M290 3H390M290 9H390M290 15H390"/></g>
+        <use href="#tallwin" x="28" y="92"/><use href="#tallwin" x="98" y="92"/><use href="#tallwin" x="160" y="80"/>
+        <rect x="205" y="98" width="320" height="102" fill="#ccb994"/>
+        <rect x="268" y="120" width="194" height="80" fill="#c9cdd1"/>
+        <g fill="url(#glass)" class="glow"><rect x="273" y="125" width="40" height="75"/><rect x="316" y="125" width="40" height="75"/><rect x="359" y="125" width="12" height="75"/><rect x="374" y="125" width="40" height="75"/><rect x="417" y="125" width="40" height="75"/></g>
+        <path d="M268 164H462" stroke="#c9cdd1" stroke-width="3"/>
+        <rect x="210" y="98" width="28" height="102" fill="url(#stone)"/><rect x="492" y="98" width="28" height="102" fill="url(#stone)"/>
+        <rect x="165" y="98" width="400" height="10" fill="#000" opacity=".16"/>
+        <rect x="150" y="72" width="425" height="27" fill="#b4b9bf"/>
+        <rect x="150" y="72" width="425" height="5" fill="#dfe3e7"/>
+        <g stroke="#979ea6" stroke-width="1.5"><path d="M203 77V99M256 77V99M309 77V99M362 77V99M415 77V99M468 77V99M521 77V99"/></g>
+        <use href="#gridwin" x="555" y="106"/><use href="#gridwin" x="603" y="106"/><use href="#gridwin" x="651" y="106"/>
+        <rect x="-20" y="196" width="740" height="8" fill="#000" opacity=".14"/>
+      </g>
+      <path d="M0 571 C300 565 700 569 1200 571 V640H0z" fill="#3f6648"/>
+      <!-- front walk with red brick bands -->
+      <path d="M360 575H450L565 640H245Z" fill="#d6d0c4"/>
+      <g clip-path="url(#walk)" fill="#b65a44"><rect x="200" y="584" width="420" height="5"/><rect x="200" y="599" width="420" height="7"/><rect x="200" y="618" width="420" height="9"/></g>
+      <g fill="#1e2226"><rect x="290" y="606" width="10" height="34"/><rect x="400" y="610" width="10" height="30"/><rect x="510" y="606" width="10" height="34"/></g>
+      <g fill="#3a4047"><rect x="288" y="603" width="14" height="4"/><rect x="398" y="607" width="14" height="4"/><rect x="508" y="603" width="14" height="4"/></g>
+      <use href="#tree" transform="translate(150 600) scale(1.35)"/>
+    </svg>
+    <div class="hero-in">
+      <div class="hero-copy">
+        <div class="heb he" lang="he" dir="rtl">שערי תפילה</div>
+        <h1>Shaare Tefila Congregation</h1>
+        <p class="tag">Where you will always belong. A warm, egalitarian Conservative synagogue in Olney, Maryland, since 1951.</p>
+      </div>
+      <div class="times" aria-labelledby="tTitle">
+        <h3 id="tTitle">Join us for services</h3>
+        <div class="trow"><b>6:00 pm<small>Friday</small></b><span>Kabbalat Shabbat<small>Livestream; in person on Shabbat Dinner nights</small></span></div>
+        <div class="trow"><b>9:30 am<small>Saturday</small></b><span>Shabbat morning<small>In person &amp; livestream</small></span></div>
+        <div class="trow"><b>8:45 am<small>Sun, Mon, Thu</small></b><span>Morning minyan<small>In person &amp; Zoom</small></span></div>
+        <div class="trow"><b>7:30 pm<small>Mon &amp; Wed</small></b><span>Evening minyan<small>Zoom only</small></span></div>
+        <div class="btns">
+          <a class="btn red" href="https://www.youtube.com/channel/UCrfANsXttb0DerJpEGqMSoA/live">Watch live</a>
+          <a class="btn alt" href="https://us02web.zoom.us/j/3026500395?pwd=QktRaUlqYzdqUDhJdVlkZG9BdDZMQT09">Join on Zoom</a>
+        </div>
+      </div>
+    </div>
+  </div>

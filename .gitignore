@@ -1,0 +1,9 @@
+node_modules/
+_site/
+test-report/
+test-results/
+.DS_Store
+# Never put the Google key file in the repository; it goes in a GitHub secret.
+*service-account*.json
+*-key.json
+gha-creds-*.json

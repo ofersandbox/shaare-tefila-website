@@ -1,0 +1,26 @@
+{
+  "name": "shaare-tefila-website",
+  "private": true,
+  "description": "Shaare Tefila Congregation website. Section content comes from Google Drive; see SETUP.md.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "sync": "node build/sync-life-at.mjs",
+    "sync:local": "LOCAL_DRIVE_DIR=\"../drive-starter/Life at Shaare Tefila\" node build/sync-life-at.mjs",
+    "test": "playwright test",
+    "serve": "http-server . -p 8000 -c-1",
+    "live-check": "node tests/live-check.mjs"
+  },
+  "dependencies": {
+    "googleapis": "^190.0.0",
+    "nodemailer": "^10.6.1",
+    "nunjucks": "^3.2.4",
+    "sharp": "^0.34.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "http-server": "^14.1.1"
+  }
+}

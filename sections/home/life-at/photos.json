@@ -1,0 +1,48 @@
+{
+  "section": "Life at Shaare Tefila",
+  "updated": "2026-11-26T23:50:11.115Z",
+  "fingerprint": "../drive-starter/Life at Shaare Tefila/1 - Our community, all ages together.jpg:340806-1795736762349:1:Our community, all ages together|../drive-starter/Life at Shaare Tefila/2 - Chavaya Religious School.jpg:269721-1795736762521:2:Chavaya Religious School|../drive-starter/Life at Shaare Tefila/3 - Hanukkah.jpg:344494-1795736762693:3:Hanukkah|../drive-starter/Life at Shaare Tefila/4 - Music and celebration.jpg:171977-1795736762698:4:Music and celebration|../drive-starter/Life at Shaare Tefila/5 - Connected to Israel.jpg:180560-1795736762699:5:Connected to Israel|more:false",
+  "moreInFolder": false,
+  "photos": [
+    {
+      "order": 1,
+      "caption": "Our community, all ages together",
+      "src": "sections/home/life-at/01-our-community-all-ages-together-1200.jpg",
+      "srcset": "sections/home/life-at/01-our-community-all-ages-together-600.jpg 600w, sections/home/life-at/01-our-community-all-ages-together-1200.jpg 1200w",
+      "width": 1200,
+      "height": 812
+    },
+    {
+      "order": 2,
+      "caption": "Chavaya Religious School",
+      "src": "sections/home/life-at/02-chavaya-religious-school-1200.jpg",
+      "srcset": "sections/home/life-at/02-chavaya-religious-school-600.jpg 600w, sections/home/life-at/02-chavaya-religious-school-1200.jpg 1200w",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "order": 3,
+      "caption": "Hanukkah",
+      "src": "sections/home/life-at/03-hanukkah-1200.jpg",
+      "srcset": "sections/home/life-at/03-hanukkah-600.jpg 600w, sections/home/life-at/03-hanukkah-1200.jpg 1200w",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "order": 4,
+      "caption": "Music and celebration",
+      "src": "sections/home/life-at/04-music-and-celebration-1200.jpg",
+      "srcset": "sections/home/life-at/04-music-and-celebration-600.jpg 600w, sections/home/life-at/04-music-and-celebration-1200.jpg 1200w",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "order": 5,
+      "caption": "Connected to Israel",
+      "src": "sections/home/life-at/05-connected-to-israel-1200.jpg",
+      "srcset": "sections/home/life-at/05-connected-to-israel-600.jpg 600w, sections/home/life-at/05-connected-to-israel-1200.jpg 1200w",
+      "width": 1200,
+      "height": 900
+    }
+  ]
+}

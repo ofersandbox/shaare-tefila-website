@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shaare Tefila Congregation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Figtree:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="brand" href="#home" aria-label="Shaare Tefila Congregation home">
+      <img class="logo-img" src="common/logo.jpg" alt="" width="36" height="52">
+      <span><b>Shaare Tefila</b><small>Congregation · Olney, MD</small></span>
+    </a>
+    <button id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav class="main" id="mainNav" aria-label="Main">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#worship">Worship</a>
+      <a href="#learn">Education</a>
+      <a href="#involved">Get Involved</a>
+      <a href="#news">News &amp; Events</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#visit">Contact</a>
+      <a href="#give" class="give-btn">Donate</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ================= HOME ================= -->
+<section class="view" id="home">
+  <div data-include="sections/home/01-hero.html"></div>
+  <div data-include="sections/home/02-notice.html"></div>
+  <div data-include="sections/home/03-welcome.html"></div>
+  <div data-include="sections/home/04-life-at-shaare-tefila.html"></div>
+  <div data-include="sections/home/05-new-here.html"></div>
+  <div data-include="sections/home/06-quick-links.html"></div>
+</section>
+
+<div data-include="sections/about/about.html"></div>
+
+<div data-include="sections/worship/worship.html"></div>
+
+<div data-include="sections/education/education.html"></div>
+
+<div data-include="sections/get-involved/get-involved.html"></div>
+
+<div data-include="sections/news-and-events/news-and-events.html"></div>
+
+<div data-include="sections/donate/donate.html"></div>
+
+<div data-include="sections/contact/contact.html"></div>
+
+<div data-include="sections/gallery/gallery.html"></div>
+
+<div data-include="sections/calendar/calendar.html"></div>
+</main>
+
+<footer>
+  <div class="wrap g4">
+    <div><h4>Shaare Tefila Congregation</h4><p>Where you will always belong.</p><p>16620 Georgia Avenue<br>Olney, MD 20832</p><p>(301) 593-3410<br><a href="mailto:info@shaaretefila.org">info@shaaretefila.org</a></p></div>
+    <div><h4>Pray &amp; learn</h4><ul><li><a href="#schedule">Service times</a></li><li><a href="https://www.youtube.com/channel/UCrfANsXttb0DerJpEGqMSoA/live">Livestream</a></li><li><a href="#adult">Adult learning</a></li><li><a href="#chavaya">Religious school</a></li><li><a href="#sermons">Sermons</a></li></ul></div>
+    <div><h4>Community</h4><ul><li><a href="#involved">Get involved</a></li><li><a href="#news">News &amp; events</a></li><li><a href="#shofar">The Shofar</a></li><li><a href="#gallery">Photo gallery</a></li><li><a href="#calendar">Event calendar</a></li><li><a href="#rentals">Host an event</a></li></ul></div>
+    <div><h4>Members</h4><ul><li><a href="https://shaaretefilacongregation.shulcloud.com/member">ShulCloud login</a></li><li><a href="#give">Donate</a></li><li><a href="#weather">Weather policy</a></li><li><a href="#visit">Contact &amp; directions</a></li></ul>
+      <div class="social"><a href="https://www.facebook.com/ShaareTefila/">Facebook</a><a href="https://www.instagram.com/shaaretefila/">Instagram</a><a href="https://www.youtube.com/user/JonahLayman/videos">YouTube</a><a href="https://twitter.com/ShaareTefila">X / Twitter</a><a href="https://www.pinterest.com/bcohn1321/">Pinterest</a></div></div>
+  </div>
+  <div class="wrap fine">Affiliated with the United Synagogue of Conservative Judaism (USCJ) · A Keshet Safe Zone · © 2026 Shaare Tefila Congregation</div>
+</footer>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer"><img id="lbImg" alt=""><p id="lbCap"></p><div class="lbc"><button id="lbPrev" aria-label="Previous photo">‹ Prev</button><button id="lbClose">Close</button><button id="lbNext" aria-label="Next photo">Next ›</button></div></div>
+<script src="js/main.js"></script>
+</body>
+</html>
