@@ -1,0 +1,213 @@
+# Builds, checks and publishes the Shaare Tefila website to GitHub Pages.
+#
+# Runs:  every hour (publishes only if a Drive folder changed),
+#        when someone clicks "Run workflow" on the Actions tab ("Publish now"),
+#        and whenever a change to the code is saved to the main branch.
+#
+# See SETUP.md for the one-time setup and for how to restore an earlier version.
+
+name: Publish website
+
+on:
+  schedule:
+    - cron: "17 * * * *"          # every hour, at 17 minutes past
+  workflow_dispatch:
+    inputs:
+      restore_version:
+        description: "To restore an earlier version, paste its commit ID here. Leave blank for a normal publish."
+        required: false
+        default: ""
+  push:
+    branches: [main]
+
+permissions:
+  contents: write                 # save the new photos back to the repository
+  pages: write                    # publish to GitHub Pages
+  id-token: write
+
+concurrency:
+  group: publish-website
+  cancel-in-progress: false
+
+env:
+  FORCE_COLOR: "0"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      publish: ${{ steps.decide.outputs.publish }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.restore_version || github.ref }}
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Sign in to Google (Workload Identity Federation, no key file)
+        id: google
+        uses: google-github-actions/auth@v3
+        with:
+          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
+          token_format: access_token
+          access_token_scopes: https://www.googleapis.com/auth/drive.readonly
+          create_credentials_file: false
+
+      - name: "Check 1: read 'Life at Shaare Tefila' from Google Drive"
+        id: sync
+        if: ${{ !inputs.restore_version }}
+        env:
+          GOOGLE_ACCESS_TOKEN: ${{ steps.google.outputs.access_token }}
+          WEBSITE_FOLDER_ID: ${{ vars.WEBSITE_FOLDER_ID }}
+          LIFE_AT_FOLDER_ID: ${{ vars.LIFE_AT_FOLDER_ID }}
+          LIFE_AT_OWNER_EMAIL: ${{ vars.LIFE_AT_OWNER_EMAIL }}
+          NOTIFY_TO: ${{ vars.NOTIFY_TO }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        run: npm run sync
+
+      # The gallery's resized photos aren't saved in GitHub. They are kept in a
+      # cache between runs, so only new photos have to be downloaded and resized.
+      - name: Bring back the resized gallery photos from the last run
+        uses: actions/cache/restore@v4
+        with:
+          path: sections/gallery/built
+          key: gallery-${{ github.run_id }}
+          restore-keys: gallery-
+
+      # The gallery always follows Google Drive, even when restoring an earlier version.
+      - name: "Check 1: read the Gallery from Google Drive"
+        id: gallery
+        env:
+          GOOGLE_ACCESS_TOKEN: ${{ steps.google.outputs.access_token }}
+          WEBSITE_FOLDER_ID: ${{ vars.WEBSITE_FOLDER_ID }}
+          GALLERY_FOLDER_ID: ${{ vars.GALLERY_FOLDER_ID }}
+          GALLERY_OWNER_EMAIL: ${{ vars.GALLERY_OWNER_EMAIL }}
+          NOTIFY_TO: ${{ vars.NOTIFY_TO }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        run: npm run sync:gallery
+
+      - name: Keep the resized gallery photos for the next run
+        if: steps.gallery.outputs.gallery_rebuilt == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: sections/gallery/built
+          key: gallery-${{ github.run_id }}
+
+      - name: Save the new version (this becomes the "last good version")
+        if: ${{ !inputs.restore_version }}
+        run: |
+          git config user.name "Website builder"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sections/home sections/gallery/albums.json build/state
+          if git diff --cached --quiet; then
+            echo "Nothing new to save."
+          else
+            git commit -m "Update from Google Drive"
+            git push
+          fi
+
+      - name: Decide whether to publish
+        id: decide
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ] || [ "${{ steps.sync.outputs.changed }}" = "true" ] || [ "${{ steps.gallery.outputs.gallery_changed }}" = "true" ]; then
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+            echo "No changes since the last publish." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: "Check 2: test the whole site in a browser"
+        if: steps.decide.outputs.publish == 'true'
+        run: |
+          npx playwright install --with-deps chromium
+          npx playwright test
+
+      - name: Keep the test report
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: test-report
+          path: test-report
+          retention-days: 14
+
+      - name: Gather the files visitors need
+        if: steps.decide.outputs.publish == 'true'
+        run: |
+          mkdir _site
+          rsync -a --exclude='.*' --exclude='node_modules' --exclude='build' --exclude='tests' \
+            --exclude='test-report' --exclude='test-results' --exclude='_site' --exclude='*.njk' \
+            --exclude='package*.json' --exclude='playwright.config.mjs' --exclude='SETUP.md' --exclude='gha-creds-*.json' \
+            --exclude='sections/home/life-at/photos.json' --exclude='sections/gallery/built/index.json' ./ _site/
+
+      - uses: actions/configure-pages@v6
+        if: steps.decide.outputs.publish == 'true'
+
+      - uses: actions/upload-pages-artifact@v5
+        if: steps.decide.outputs.publish == 'true'
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.publish == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish
+        id: deployment
+        uses: actions/deploy-pages@v5
+
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.restore_version || github.ref }}
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: "Check 3: make sure the live site shows the new version"
+        env:
+          NOTIFY_TO: ${{ vars.NOTIFY_TO }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        run: node tests/live-check.mjs "${{ steps.deployment.outputs.page_url }}"
+
+  tell-the-office:
+    needs: [build, deploy]
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Email the office
+        env:
+          NOTIFY_TO: ${{ vars.NOTIFY_TO }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        run: node build/notify-failure.mjs
