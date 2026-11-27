@@ -1,7 +1,7 @@
 (async()=>{
 // Load page sections kept in separate files (see sections/ folder)
 await Promise.all([...document.querySelectorAll('[data-include]')].map(async el=>{
-  try{const r=await fetch(el.dataset.include);if(!r.ok)throw new Error(r.status);el.outerHTML=await r.text();}
+  try{const r=await fetch(el.dataset.include,{cache:'no-cache'});if(!r.ok)throw new Error(r.status);el.outerHTML=await r.text();}
   catch(e){el.innerHTML='<p style="padding:24px;text-align:center">This section couldn\'t load. Open the site through a local web server (not by double-clicking index.html).</p>';}
 }));
 
@@ -50,7 +50,7 @@ document.getElementById('upcoming3').innerHTML=html;
 const photos=[["common/community-walk.jpg","Our community, all ages together"],["common/building-sukkah.jpg","Putting up the sukkah outside our building"],["common/sukkah-build.jpg","Sukkah building volunteers"],["common/religious-school-class.jpg","Chavaya Religious School"],["common/israel-flag.jpg","Students with the flag of Israel"],["common/young-crafts.jpg","Crafts with our youngest learners"],["common/kids-photo-booth.jpg","Fun at the photo booth"],["common/costume-carnival.jpg","Costumes and carnival fun"],["common/hanukkah.jpg","Celebrating Hanukkah"],["sections/gallery/hanukkah-dreidel.jpg","Dreidel time at Hanukkah"],["sections/gallery/lulav-etrog.jpg","Shaking the lulav and etrog on Sukkot"],["common/concert.jpg","Music and celebration"],["common/song-leader.jpg","Singing together"],["common/guitar-service.jpg","Music at services"],["common/rabbi-podium.jpg","Rabbi Jonah Layman"],["common/sanctuary-gathering.jpg","Gathering in the sanctuary"],["common/cooking-together.jpg","Cooking together"],["common/kitchen-volunteers.jpg","Volunteers in the kitchen"]];
 const gg=document.getElementById('galGrid');
 // More photos from the original website's gallery are listed in sections/gallery/photos.json
-try{const r=await fetch('sections/gallery/photos.json');if(r.ok)photos.push(...await r.json());}catch(e){}
+try{const r=await fetch('sections/gallery/photos.json',{cache:'no-cache'});if(r.ok)photos.push(...await r.json());}catch(e){}
 const PAGE=40;let shown=0;
 const galMore=document.getElementById('galMore'),galCount=document.getElementById('galCount');
 const renderMore=()=>{const next=photos.slice(shown,shown+PAGE);gg.insertAdjacentHTML('beforeend',next.map(([f,c],j)=>`<button data-i="${shown+j}" aria-label="View larger: ${c}"><img src="${f}" alt="${c}" loading="lazy"></button>`).join(''));shown+=next.length;galCount.textContent=`Showing ${shown} of ${photos.length} photos`;galMore.hidden=shown>=photos.length;};
