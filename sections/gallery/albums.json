@@ -1,7 +1,7 @@
 {
  "section": "Photo gallery",
- "updated": "2026-11-27T20:35:59.507Z",
- "fingerprint": "0f02664591690793",
+ "updated": "2026-11-27T21:09:44.242Z",
+ "fingerprint": "b423f328b63ad7d0",
  "albums": [
   {
    "title": "Our community",
@@ -150,6 +150,13 @@
      "caption": "ready for glaze fire",
      "thumb": "sections/gallery/built/14273c907995-640.jpg",
      "src": "sections/gallery/built/14273c907995-1600.jpg",
+     "width": 1600,
+     "height": 1202
+    },
+    {
+     "caption": "glaze firing",
+     "thumb": "sections/gallery/built/b0c6f01a9f87-640.jpg",
+     "src": "sections/gallery/built/b0c6f01a9f87-1600.jpg",
      "width": 1600,
      "height": 1202
     },
