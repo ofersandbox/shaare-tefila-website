@@ -54,6 +54,28 @@ For the prototype, use **ofer.sandbox@gmail.com**.
   saved as JPEG first.
 - To remove a photo, delete it or move it out of the folder.
 
+### The Gallery folder
+
+1. In the `Website` folder (not inside `Home`), drag in the whole folder
+   **Claude > ShaareTefila > drive-starter > Gallery** from your Mac. It holds the
+   current gallery, already sorted into albums.
+2. Open the `Website` folder itself and copy **its** folder ID from the address bar.
+   The build finds `Gallery` inside it by name. You'll need this ID in Part 3.
+
+**Rules for the Gallery** (worth printing for photographers):
+
+- Each **album is a folder** inside `Gallery`. Start its name with the date so it
+  sorts correctly: `2025-12 Hanukkah`, `2026-05 Religious school picnic`, or just
+  `2024 Gala`. The page shows albums newest first, each with its name as a heading.
+- Any photo name works, including straight-from-the-phone names like `IMG_4021.HEIC`.
+  To add a caption, name the photo after what it shows: `Kids lighting the menorah.jpg`.
+  To choose the order, start names with numbers: `1 - Arrival.jpg`. Otherwise photos
+  are in the order they were taken.
+- iPhone HEIC photos are fine. Videos, documents and folders inside albums are skipped.
+- A photo that can't be used (broken, or tiny) is skipped and the office is told which
+  one; the rest of the gallery still updates.
+- To remove a photo or album, delete it or move it out of `Gallery`.
+
 ---
 
 ## Part 2: Google Cloud sign-in, without a key file (about 15 minutes)
@@ -78,21 +100,57 @@ so use exactly these names in Part 3. If you change them later, rerun step 4 bel
    **ofer.sandbox@gmail.com** (check the picture at the top right), and accept the
    terms if asked. Click the project picker at the top > **New project**, name it
    `Shaare Tefila Website`, and click **Create**. Select it in the project picker.
-   Note its **Project ID** from the dashboard (it may have extra numbers added).
-2. **Open Cloud Shell.** Click the **>_** icon at the top right of the console. A
-   terminal opens at the bottom of the page. If asked, click **Continue** and
-   **Authorize**.
-3. **Fill in your names.** Paste these two lines, replacing the parts in capitals,
-   and press Return:
+   On the dashboard, note the **Project number** (all digits).
+2. **Turn on four services.** Go to **APIs & Services > Library**. Search for each of
+   these, open it, and click **Enable**:
+   - **Google Drive API**
+   - **IAM Service Account Credentials API**
+   - **Security Token Service API**
+   - **Identity and Access Management (IAM) API**
+3. **Create the robot.** Go to **IAM & Admin > Service Accounts > + Create service
+   account**. Name it `website-builder`, click **Create and continue**, skip the
+   optional steps, and click **Done**. Copy its email, which looks like
+   `website-builder@YOUR-PROJECT-ID.iam.gserviceaccount.com`.
+4. **Create the GitHub sign-in.** Go to **IAM & Admin > Workload Identity Federation**
+   and click **Get started** or **Create pool**.
+   - Pool **Name**: `github` (this becomes the pool ID). Click **Continue**.
+   - **Select a provider**: **OpenID Connect (OIDC)**
+   - **Provider name**: `Shaare Tefila website repo`
+   - **Provider ID**: `shaare-tefila-site`
+   - **Issuer URL**: `https://token.actions.githubusercontent.com` (exactly this, with no slash at the end)
+   - **Audiences**: **Default audience**. Click **Continue**.
+   - **Attribute mapping**: in the first row, Google `google.subject` = OIDC
+     `assertion.sub`. Click **Add mapping** and enter Google `attribute.repository` =
+     OIDC `assertion.repository`.
+   - **Attribute conditions**: click **Add condition** and enter (with your username):
+     `assertion.repository=='YOUR-GITHUB-USERNAME/shaare-tefila-website'`
+   - Click **Save**.
+5. **Let only your repository act as the robot.** On the `github` pool's page, click
+   **Grant access**, then:
+   - choose **Grant access using Service Account impersonation**
+   - **Service accounts**: `website-builder`
+   - choose **Only identities matching the filter**
+   - **Attribute name**: `repository`; **Attribute value**:
+     `YOUR-GITHUB-USERNAME/shaare-tefila-website`
+   - click **Save**. If a "Configure your application" window appears, click
+     **Dismiss**; you don't need to download anything.
+6. **Write down the two values for GitHub** (Part 3). Neither is a password.
+   - `GCP_WORKLOAD_IDENTITY_PROVIDER`: type this, with your project number:
+     `projects/YOUR-PROJECT-NUMBER/locations/global/workloadIdentityPools/github/providers/shaare-tefila-site`
+   - `GCP_SERVICE_ACCOUNT`: the robot's email from step 3.
+7. **Share the Drive folder with the robot.** In Google Drive, right-click the
+   `Website` folder > **Share**, paste the robot's email, choose **Viewer**, untick
+   "Notify people", and click **Share**.
+
+Changes can take up to 5 minutes to take effect.
+
+**Alternative, if Cloud Shell works for your account:** click the **>_** icon at the
+top right of the console and run these instead of steps 2–6, after replacing the
+capitalized parts in the first two lines:
 
    ```
    PROJECT_ID="YOUR-PROJECT-ID"
    GITHUB_REPO="YOUR-GITHUB-USERNAME/shaare-tefila-website"
-   ```
-
-4. **Run the setup.** Paste this whole block and press Return. It takes a minute or two.
-
-   ```
    gcloud config set project "$PROJECT_ID"
    PROJECT_NUMBER=$(gcloud projects describe "$PROJECT_ID" --format="value(projectNumber)")
    gcloud services enable drive.googleapis.com iam.googleapis.com iamcredentials.googleapis.com sts.googleapis.com
@@ -112,16 +170,10 @@ so use exactly these names in Part 3. If you change them later, rerun step 4 bel
    echo "GCP_SERVICE_ACCOUNT = ${SA}"
    ```
 
-5. **Copy the last two lines** it prints (`GCP_WORKLOAD_IDENTITY_PROVIDER = ...` and
-   `GCP_SERVICE_ACCOUNT = ...`). You'll paste them into GitHub in Part 3. Neither is
-   a password.
-6. **Share the Drive folder with the robot.** In Google Drive, right-click the
-   `Website` folder > **Share**, paste the robot's email (the `GCP_SERVICE_ACCOUNT`
-   value, ending in `iam.gserviceaccount.com`), choose **Viewer**, untick
-   "Notify people", and click **Share**.
+   The last two lines it prints are the two values for GitHub. Then do step 7.
 
 If a command says something "already exists", that part was already done; it's
-safe to continue. Changes can take up to 5 minutes to take effect.
+safe to continue.
 
 ---
 
@@ -148,10 +200,11 @@ safe to continue. Changes can take up to 5 minutes to take effect.
 4. On **github.com**, open the repository and click **Settings**:
    - **Secrets and variables > Actions > Variables tab > New repository variable**
      (add each one separately; paste only the value, without the name and `=`)
-     - `GCP_WORKLOAD_IDENTITY_PROVIDER` = the value from Part 2, step 5
+     - `GCP_WORKLOAD_IDENTITY_PROVIDER` = the value from Part 2, step 6
        (starts with `projects/` and ends with `providers/shaare-tefila-site`)
-     - `GCP_SERVICE_ACCOUNT` = the robot's email from Part 2, step 5
+     - `GCP_SERVICE_ACCOUNT` = the robot's email from Part 2, step 6
      - `LIFE_AT_FOLDER_ID` = the folder ID from Part 1, step 5
+     - `WEBSITE_FOLDER_ID` = the ID of the `Website` folder (see "The Gallery folder" in Part 1)
      - `NOTIFY_TO` = `ofer.sandbox@gmail.com` (who hears about problems during the prototype)
      - `LIFE_AT_OWNER_EMAIL` = the test section owner's email (optional)
    - **Pages**: under "Build and deployment", set **Source** to **GitHub Actions**.
@@ -202,6 +255,7 @@ A repeated problem is emailed at most once a day, not every hour.
 | To... | Do this |
 |---|---|
 | Change the photos | Edit the Drive folder. The site updates within the hour. |
+| Add a gallery album | In Drive, make a folder in `Gallery` named like `2026-03 Purim` and put the photos in it. |
 | Publish right away | GitHub > Actions > Publish website > Run workflow |
 | See what happened | GitHub > Actions > click a run > its summary |
 | Change the layout or design | Edit the files in the website folder, then **Commit** and **Push** in GitHub Desktop. That publishes automatically, after the checks pass. |
@@ -266,14 +320,17 @@ When the pilot works and the board approves, move it off ofer.sandbox@gmail.com:
 | `build/lib/drive.mjs`, `build/lib/notify.mjs` | Shared helpers: reading Drive, sending notices |
 | `tests/site.spec.mjs` | Check 2: browser tests at laptop and phone sizes |
 | `tests/live-check.mjs` | Check 3: checks the live site after publishing |
+| `build/sync-gallery.mjs` | Reads the Gallery folder (albums = sub-folders), resizes new photos, writes `sections/gallery/albums.json` |
+| `sections/gallery/albums.json` | **Generated** list of albums and photos (saved in GitHub) |
+| `sections/gallery/built/` | **Generated** resized gallery photos. Not saved in GitHub: rebuilt from Drive and kept in a GitHub Actions cache between runs |
 | `.github/workflows/publish.yml` | The hourly / Publish-now process |
 
 **Testing on a Mac** (needs Node.js 22 or newer from nodejs.org), in Terminal:
 
 ```
-cd ~/Claude/ShaareTefila/website
+cd ~/Claude/ShaareTefila/shaare-tefila-website
 npm install
-npm run sync:local          # build the section from ../drive-starter instead of Drive
+npm run sync:local          # build Life-at and the Gallery from ../drive-starter instead of Drive
 npm run serve               # then open http://localhost:8000
 npx playwright install chromium
 npm test                    # run Check 2

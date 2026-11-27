@@ -7,3 +7,6 @@ test-results/
 *service-account*.json
 *-key.json
 gha-creds-*.json
+
+# Resized gallery photos: rebuilt from Google Drive on every run, not saved in GitHub.
+sections/gallery/built/

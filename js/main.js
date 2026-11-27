@@ -47,13 +47,33 @@ const html=next.length?next.map(fmt).join(''):'<p class="muted">See the event ca
 document.getElementById('upcoming').innerHTML=html;
 document.getElementById('upcoming2').innerHTML=html;
 document.getElementById('upcoming3').innerHTML=html;
-const photos=[["common/community-walk.jpg","Our community, all ages together"],["common/building-sukkah.jpg","Putting up the sukkah outside our building"],["common/sukkah-build.jpg","Sukkah building volunteers"],["common/religious-school-class.jpg","Chavaya Religious School"],["common/israel-flag.jpg","Students with the flag of Israel"],["common/young-crafts.jpg","Crafts with our youngest learners"],["common/kids-photo-booth.jpg","Fun at the photo booth"],["common/costume-carnival.jpg","Costumes and carnival fun"],["common/hanukkah.jpg","Celebrating Hanukkah"],["sections/gallery/hanukkah-dreidel.jpg","Dreidel time at Hanukkah"],["sections/gallery/lulav-etrog.jpg","Shaking the lulav and etrog on Sukkot"],["common/concert.jpg","Music and celebration"],["common/song-leader.jpg","Singing together"],["common/guitar-service.jpg","Music at services"],["common/rabbi-podium.jpg","Rabbi Jonah Layman"],["common/sanctuary-gathering.jpg","Gathering in the sanctuary"],["common/cooking-together.jpg","Cooking together"],["common/kitchen-volunteers.jpg","Volunteers in the kitchen"]];
-const gg=document.getElementById('galGrid');
-// More photos from the original website's gallery are listed in sections/gallery/photos.json
-try{const r=await fetch('sections/gallery/photos.json',{cache:'no-cache'});if(r.ok)photos.push(...await r.json());}catch(e){}
-const PAGE=40;let shown=0;
+// Gallery: albums come from sections/gallery/albums.json, which the build makes from
+// the Gallery folder in Google Drive. Albums are headings down one page, newest first.
+const esc=t=>String(t).replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+let albums=[];
+try{const r=await fetch('sections/gallery/albums.json',{cache:'no-cache'});if(r.ok)albums=(await r.json()).albums||[];}catch(e){}
+const photos=[],tiles=[];
+albums.forEach((a,ai)=>a.photos.forEach(p=>{photos.push([p.src,p.caption?`${p.caption} · ${a.title}`:a.title]);tiles.push({...p,ai});}));
+const gg=document.getElementById('galAlbums');
+const PAGE=40;let shown=0,openAlbum=-1,grid=null;
 const galMore=document.getElementById('galMore'),galCount=document.getElementById('galCount');
-const renderMore=()=>{const next=photos.slice(shown,shown+PAGE);gg.insertAdjacentHTML('beforeend',next.map(([f,c],j)=>`<button data-i="${shown+j}" aria-label="View larger: ${c}"><img src="${f}" alt="${c}" loading="lazy"></button>`).join(''));shown+=next.length;galCount.textContent=`Showing ${shown} of ${photos.length} photos`;galMore.hidden=shown>=photos.length;};
+const renderMore=()=>{
+  const end=Math.min(shown+PAGE,tiles.length);
+  for(let i=shown;i<end;i++){
+    const t=tiles[i];
+    if(t.ai!==openAlbum){
+      openAlbum=t.ai;const a=albums[t.ai];
+      const sub=[a.when,`${a.photos.length} photo${a.photos.length===1?'':'s'}`].filter(Boolean).join(' · ');
+      gg.insertAdjacentHTML('beforeend',`<section class="album"><h2>${esc(a.title)}</h2><p class="muted">${esc(sub)}</p><div class="gal"></div></section>`);
+      grid=gg.lastElementChild.querySelector('.gal');
+    }
+    const alt=t.caption||`Photo from ${albums[t.ai].title}`;
+    grid.insertAdjacentHTML('beforeend',`<button data-i="${i}" aria-label="View larger: ${esc(alt)}"><img src="${esc(t.thumb)}" alt="${esc(alt)}" width="${t.width}" height="${t.height}" loading="lazy"></button>`);
+  }
+  shown=end;
+  galCount.textContent=tiles.length?`Showing ${shown} of ${tiles.length} photos`:'New photos are on their way. Please check back soon.';
+  galMore.hidden=shown>=tiles.length;
+};
 renderMore();
 galMore.addEventListener('click',()=>{const first=shown;renderMore();gg.querySelector(`[data-i="${first}"]`)?.focus();});
 const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap');let cur=0;

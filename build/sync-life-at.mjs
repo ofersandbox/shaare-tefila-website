@@ -10,17 +10,17 @@
 //      sections/home/04-life-at-shaare-tefila.html   the finished section
 //
 // Run in GitHub by .github/workflows/publish.yml. To test on a computer:
-//   npm run sync:local   (reads test-drive/life-at instead of Google Drive)
+//   npm run sync:local   (reads ../drive-starter instead of Google Drive)
 
 import sharp from "sharp";
 import nunjucks from "nunjucks";
 import { mkdir, readFile, readdir, rm, writeFile, appendFile } from "node:fs/promises";
-import { listFolder, downloadFile, folderLink } from "./lib/drive.mjs";
+import { listFolder, downloadFile, folderLink, sectionFolder, FOLDER } from "./lib/drive.mjs";
 import { notifySection, summary } from "./lib/notify.mjs";
 
 const SECTION = "Life at Shaare Tefila";
 const SLUG = "life-at";
-const FOLDER_ID = process.env.LIFE_AT_FOLDER_ID;
+const EXPLICIT_FOLDER_ID = process.env.LIFE_AT_FOLDER_ID; // optional; otherwise found by name in the Website folder
 const OWNER_EMAIL = process.env.LIFE_AT_OWNER_EMAIL;
 
 const ROOT = new URL("../", import.meta.url);
@@ -61,10 +61,14 @@ async function readPrevious() {
 }
 
 async function main() {
-  const folderUrl = folderLink(FOLDER_ID);
+  let folderId = EXPLICIT_FOLDER_ID;
+  let folderUrl = folderLink(folderId);
   let files;
   try {
-    files = await listFolder(FOLDER_ID);
+    folderId = await sectionFolder(SECTION, EXPLICIT_FOLDER_ID);
+    if (!folderId) throw new Error(`there is no folder named "${SECTION}" in the Website folder`);
+    folderUrl = folderLink(folderId);
+    files = await listFolder(folderId);
   } catch (err) {
     // Can't reach Drive: keep the website as it is and tell the office.
     await notifySection({
@@ -81,7 +85,7 @@ async function main() {
   const candidates = [];
 
   for (const f of files) {
-    if (f.mimeType === "application/vnd.google-apps.folder") continue;
+    if (f.mimeType === FOLDER) continue;
     if (f.mimeType === "image/heic" || f.mimeType === "image/heif") {
       problems.push(`"${f.name}" is an iPhone HEIC photo, which websites can't show. Please upload it as a JPEG instead (on iPhone: Settings > Camera > Formats > Most Compatible, or share it as JPEG).`);
       continue;

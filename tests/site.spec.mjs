@@ -86,3 +86,46 @@ test("every link and image within the site works", async ({ page, request }) => 
   }
   expect(broken, "broken links or images").toEqual([]);
 });
+
+test("Photo gallery: albums as headings, photos load, 'Show more' works", async ({ page, request }) => {
+  const data = await (await request.get("sections/gallery/albums.json")).json();
+  const total = data.albums.reduce((n, a) => n + a.photos.length, 0);
+  await openSite(page, "gallery");
+  if (total === 0) {
+    await expect(page.locator("#galCount")).toContainText("on their way");
+    return;
+  }
+  // The first album's heading and its first photos.
+  const first = page.locator("#galAlbums .album").first();
+  await expect(first.locator("h2")).toHaveText(data.albums[0].title);
+  const img = first.locator("img").first();
+  await expect.poll(() => img.evaluate((el) => el.complete && el.naturalWidth), { message: "first gallery photo did not load" }).toBeGreaterThan(0);
+  await expect(page.locator("#galCount")).toHaveText(`Showing ${Math.min(40, total)} of ${total} photos`);
+
+  if (total > 40) {
+    await page.locator("#galMore").click();
+    await expect(page.locator("#galAlbums button")).toHaveCount(Math.min(80, total));
+  }
+  // Every album heading appears once, in order, after showing everything.
+  while (await page.locator("#galMore").isVisible()) await page.locator("#galMore").click();
+  await expect(page.locator("#galAlbums .album h2")).toHaveText(data.albums.map((a) => a.title));
+
+  // The big view opens, shows the large photo, and moves to the next one.
+  await page.locator("#galAlbums button").first().click();
+  await expect(page.locator("#lb")).toHaveClass(/on/);
+  await expect(page.locator("#lbImg")).toHaveAttribute("src", data.albums[0].photos[0].src);
+  await page.locator("#lbNext").click();
+  const second = data.albums[0].photos[1] || data.albums[1].photos[0];
+  await expect(page.locator("#lbImg")).toHaveAttribute("src", second.src);
+});
+
+test("every gallery photo file exists", async ({ request }) => {
+  test.skip(test.info().project.name !== "laptop", "checked once, at laptop size");
+  const data = await (await request.get("sections/gallery/albums.json")).json();
+  const missing = [];
+  for (const a of data.albums) for (const p of a.photos) for (const u of [p.thumb, p.src]) {
+    const res = await request.head(u);
+    if (!res.ok()) missing.push(`${a.title}: ${u}`);
+  }
+  expect(missing, "gallery photos missing from the site").toEqual([]);
+});

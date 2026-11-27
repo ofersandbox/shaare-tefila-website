@@ -192,3 +192,8 @@ footer li{margin:6px 0}
 .social a{display:inline-flex;align-items:center;min-height:40px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;text-decoration:none;font-size:14px}
 .fine{border-top:1px solid rgba(255,255,255,.15);margin-top:30px;padding-top:18px;font-size:13.5px;opacity:.85}
 @media(prefers-reduced-motion:no-preference){.glow{animation:glow 5s ease-in-out infinite alternate}@keyframes glow{from{opacity:.75}to{opacity:1}}}
+.album{margin:0 0 40px}
+.album:last-child{margin-bottom:0}
+.album h2{margin:0;font-size:clamp(1.3rem,1.1rem + .8vw,1.7rem)}
+.album>p{margin:4px 0 14px}
+@media(max-width:700px){.gal{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.gal button{border-radius:8px}}
