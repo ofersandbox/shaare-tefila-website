@@ -87,31 +87,45 @@ test("every link and image within the site works", async ({ page, request }) => 
   expect(broken, "broken links or images").toEqual([]);
 });
 
-test("Photo gallery: albums as headings, photos load, 'Show more' works", async ({ page, request }) => {
+test("Photo gallery: album list, show/hide buttons, photos load", async ({ page, request }) => {
   const data = await (await request.get("sections/gallery/albums.json")).json();
-  const total = data.albums.reduce((n, a) => n + a.photos.length, 0);
   await openSite(page, "gallery");
-  if (total === 0) {
-    await expect(page.locator("#galCount")).toContainText("on their way");
+  if (data.albums.length === 0) {
+    await expect(page.locator("#galAlbums")).toContainText("on their way");
     return;
   }
-  // The first album's heading and its first photos.
-  const first = page.locator("#galAlbums .album").first();
-  await expect(first.locator("h2")).toHaveText(data.albums[0].title);
-  const img = first.locator("img").first();
-  await expect.poll(() => img.evaluate((el) => el.complete && el.naturalWidth), { message: "first gallery photo did not load" }).toBeGreaterThan(0);
-  await expect(page.locator("#galCount")).toHaveText(`Showing ${Math.min(40, total)} of ${total} photos`);
+  // The list on the left has every album, in order, and so does the page.
+  const titles = data.albums.map((a) => a.title);
+  await expect(page.locator("#galNav li span")).toHaveText(titles);
+  await expect(page.locator("#galAlbums .album h2")).toHaveText(titles);
 
-  if (total > 40) {
-    await page.locator("#galMore").click();
-    await expect(page.locator("#galAlbums button")).toHaveCount(Math.min(80, total));
-  }
-  // Every album heading appears once, in order, after showing everything.
-  while (await page.locator("#galMore").isVisible()) await page.locator("#galMore").click();
-  await expect(page.locator("#galAlbums .album h2")).toHaveText(data.albums.map((a) => a.title));
+  // The newest album starts open and its photos load.
+  const first = page.locator("#galAlbums .album").first();
+  await expect(first.locator(".album-toggle")).toHaveAttribute("aria-expanded", "true");
+  const img = first.locator(".gal img").first();
+  await expect.poll(() => img.evaluate((el) => el.complete && el.naturalWidth), { message: "first gallery photo did not load" }).toBeGreaterThan(0);
+
+  // Its button hides the photos and shows them again.
+  await first.locator(".album-toggle").click();
+  await expect(first.locator(".gal")).toBeHidden();
+  await first.locator(".album-toggle").click();
+  await expect(first.locator(".gal")).toBeVisible();
+
+  // Clicking the last album in the list opens it and brings it into view.
+  const last = page.locator("#galAlbums .album").last();
+  await page.locator("#galNav a").last().click();
+  await expect(last.locator(".gal")).toBeVisible();
+  await expect(last.locator(".gal button")).toHaveCount(data.albums.at(-1).photos.length);
+  await expect(last.locator("h2")).toBeInViewport();
+
+  // "Hide all" and "Show all".
+  await page.locator("#galNav [data-all=hide]").click();
+  await expect(page.locator("#galAlbums .gal:visible")).toHaveCount(0);
+  await page.locator("#galNav [data-all=show]").click();
+  await expect(page.locator("#galAlbums .gal:visible")).toHaveCount(data.albums.length);
 
   // The big view opens, shows the large photo, and moves to the next one.
-  await page.locator("#galAlbums button").first().click();
+  await first.locator(".gal button").first().click();
   await expect(page.locator("#lb")).toHaveClass(/on/);
   await expect(page.locator("#lbImg")).toHaveAttribute("src", data.albums[0].photos[0].src);
   await page.locator("#lbNext").click();

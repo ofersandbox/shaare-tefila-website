@@ -48,34 +48,41 @@ document.getElementById('upcoming').innerHTML=html;
 document.getElementById('upcoming2').innerHTML=html;
 document.getElementById('upcoming3').innerHTML=html;
 // Gallery: albums come from sections/gallery/albums.json, which the build makes from
-// the Gallery folder in Google Drive. Albums are headings down one page, newest first.
+// the Gallery folder in Google Drive. The list of albums is on the left; each album
+// has a button that shows or hides its photos. The newest albums start open (about
+// 40 photos); a closed album doesn't load its photos until it is opened.
 const esc=t=>String(t).replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
 let albums=[];
 try{const r=await fetch('sections/gallery/albums.json',{cache:'no-cache'});if(r.ok)albums=(await r.json()).albums||[];}catch(e){}
-const photos=[],tiles=[];
-albums.forEach((a,ai)=>a.photos.forEach(p=>{photos.push([p.src,p.caption?`${p.caption} · ${a.title}`:a.title]);tiles.push({...p,ai});}));
-const gg=document.getElementById('galAlbums');
-const PAGE=40;let shown=0,openAlbum=-1,grid=null;
-const galMore=document.getElementById('galMore'),galCount=document.getElementById('galCount');
-const renderMore=()=>{
-  const end=Math.min(shown+PAGE,tiles.length);
-  for(let i=shown;i<end;i++){
-    const t=tiles[i];
-    if(t.ai!==openAlbum){
-      openAlbum=t.ai;const a=albums[t.ai];
-      const sub=[a.when,`${a.photos.length} photo${a.photos.length===1?'':'s'}`].filter(Boolean).join(' · ');
-      gg.insertAdjacentHTML('beforeend',`<section class="album"><h2>${esc(a.title)}</h2><p class="muted">${esc(sub)}</p><div class="gal"></div></section>`);
-      grid=gg.lastElementChild.querySelector('.gal');
-    }
-    const alt=t.caption||`Photo from ${albums[t.ai].title}`;
-    grid.insertAdjacentHTML('beforeend',`<button data-i="${i}" aria-label="View larger: ${esc(alt)}"><img src="${esc(t.thumb)}" alt="${esc(alt)}" width="${t.width}" height="${t.height}" loading="lazy"></button>`);
+const photos=[];const used=new Set();
+albums.forEach(a=>{
+  a.first=photos.length;
+  a.photos.forEach(p=>photos.push([p.src,p.caption?`${p.caption} · ${a.title}`:a.title]));
+  let slug='album-'+(a.title.toLowerCase().normalize('NFKD').replace(/[^\w\s-]/g,'').trim().replace(/[\s_-]+/g,'-')||'photos');
+  while(used.has(slug))slug+='-2';used.add(slug);a.slug=slug;
+});
+const gg=document.getElementById('galAlbums'),galNav=document.getElementById('galNav');
+if(!albums.length){gg.innerHTML='<p class="muted">New photos are on their way. Please check back soon.</p>';galNav.hidden=true;}
+galNav.innerHTML=albums.length?`<h2>Albums</h2><ul>${albums.map(a=>`<li><a href="#${a.slug}"><span>${esc(a.title)}</span><small>${a.photos.length}</small></a></li>`).join('')}</ul><p class="albums-all"><button type="button" data-all="show">Show all</button> · <button type="button" data-all="hide">Hide all</button></p>`:'';
+gg.insertAdjacentHTML('beforeend',albums.map(a=>{
+  const sub=[a.when,`${a.photos.length} photo${a.photos.length===1?'':'s'}`].filter(Boolean).join(' · ');
+  return `<section class="album" id="${a.slug}"><div class="album-head"><div><h2>${esc(a.title)}</h2><p class="muted">${esc(sub)}</p></div><button type="button" class="album-toggle" aria-controls="${a.slug}-photos" aria-expanded="false">Show photos</button></div><div class="gal" id="${a.slug}-photos" hidden></div></section>`;
+}).join(''));
+const setOpen=(a,open)=>{
+  const sec=document.getElementById(a.slug),grid=sec.querySelector('.gal'),b=sec.querySelector('.album-toggle');
+  if(open&&!grid.childElementCount){
+    grid.innerHTML=a.photos.map((p,j)=>{const alt=p.caption||`Photo from ${a.title}`;return `<button data-i="${a.first+j}" aria-label="View larger: ${esc(alt)}"><img src="${esc(p.thumb)}" alt="${esc(alt)}" width="${p.width}" height="${p.height}" loading="lazy"></button>`}).join('');
   }
-  shown=end;
-  galCount.textContent=tiles.length?`Showing ${shown} of ${tiles.length} photos`:'New photos are on their way. Please check back soon.';
-  galMore.hidden=shown>=tiles.length;
+  grid.hidden=!open;sec.classList.toggle('closed',!open);
+  b.setAttribute('aria-expanded',open);b.textContent=open?'Hide photos':'Show photos';
+  galNav.querySelector(`a[href="#${a.slug}"]`)?.classList.toggle('open',open);
 };
-renderMore();
-galMore.addEventListener('click',()=>{const first=shown;renderMore();gg.querySelector(`[data-i="${first}"]`)?.focus();});
+let budget=40;albums.forEach((a,i)=>{setOpen(a,i===0||budget>0);budget-=a.photos.length;});
+gg.addEventListener('click',e=>{const b=e.target.closest('.album-toggle');if(!b)return;const a=albums.find(x=>x.slug===b.closest('.album').id);setOpen(a,b.getAttribute('aria-expanded')!=='true');});
+galNav.addEventListener('click',e=>{const b=e.target.closest('[data-all]');if(b)albums.forEach(a=>setOpen(a,b.dataset.all==='show'));});
+// Following a link to an album (from the list, or a shared link) opens it.
+const openFromHash=()=>{const a=albums.find(x=>'#'+x.slug===location.hash);if(a)setOpen(a,true);};
+addEventListener('hashchange',openFromHash);openFromHash();
 const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap');let cur=0;
 const show=i=>{cur=(i+photos.length)%photos.length;const[f,c]=photos[cur];lbImg.src=f;lbImg.alt=c;lbCap.textContent=c;lb.classList.add('on');document.getElementById('lbClose').focus()};
 const hide=()=>lb.classList.remove('on');
