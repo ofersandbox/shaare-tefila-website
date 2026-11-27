@@ -1,7 +1,7 @@
 {
  "section": "Photo gallery",
- "updated": "2026-11-27T16:16:13.458Z",
- "fingerprint": "4be0dbe25fe6513e",
+ "updated": "2026-11-27T20:35:59.507Z",
+ "fingerprint": "0f02664591690793",
  "albums": [
   {
    "title": "Our community",
@@ -132,6 +132,33 @@
      "src": "sections/gallery/built/261f6ee4ec8d-1600.jpg",
      "width": 1200,
      "height": 772
+    }
+   ]
+  },
+  {
+   "title": "Ofer Pottery",
+   "when": "",
+   "photos": [
+    {
+     "caption": "collored clay before firing",
+     "thumb": "sections/gallery/built/a1f4003d9095-640.jpg",
+     "src": "sections/gallery/built/a1f4003d9095-1600.jpg",
+     "width": 1600,
+     "height": 1200
+    },
+    {
+     "caption": "ready for glaze fire",
+     "thumb": "sections/gallery/built/14273c907995-640.jpg",
+     "src": "sections/gallery/built/14273c907995-1600.jpg",
+     "width": 1600,
+     "height": 1202
+    },
+    {
+     "caption": "fresh after glaze fire",
+     "thumb": "sections/gallery/built/1aa58114f5b0-640.jpg",
+     "src": "sections/gallery/built/1aa58114f5b0-1600.jpg",
+     "width": 1600,
+     "height": 1202
     }
    ]
   },
