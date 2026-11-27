@@ -1,5 +1,1384 @@
 {
  "section": "Photo gallery",
- "fingerprint": "",
- "albums": []
+ "updated": "2026-11-27T16:16:13.458Z",
+ "fingerprint": "4be0dbe25fe6513e",
+ "albums": [
+  {
+   "title": "Our community",
+   "when": "",
+   "photos": [
+    {
+     "caption": "Our community, all ages together",
+     "thumb": "sections/gallery/built/a3809e0c034f-640.jpg",
+     "src": "sections/gallery/built/a3809e0c034f-1600.jpg",
+     "width": 1200,
+     "height": 812
+    },
+    {
+     "caption": "Putting up the sukkah outside our building",
+     "thumb": "sections/gallery/built/1b3e9ff232cf-640.jpg",
+     "src": "sections/gallery/built/1b3e9ff232cf-1600.jpg",
+     "width": 476,
+     "height": 501
+    },
+    {
+     "caption": "Sukkah building volunteers",
+     "thumb": "sections/gallery/built/68b49f847443-640.jpg",
+     "src": "sections/gallery/built/68b49f847443-1600.jpg",
+     "width": 640,
+     "height": 480
+    },
+    {
+     "caption": "Chavaya Religious School",
+     "thumb": "sections/gallery/built/79aa879b733d-640.jpg",
+     "src": "sections/gallery/built/79aa879b733d-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "Students with the flag of Israel",
+     "thumb": "sections/gallery/built/55b81d1ce75b-640.jpg",
+     "src": "sections/gallery/built/55b81d1ce75b-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "Crafts with our youngest learners",
+     "thumb": "sections/gallery/built/21fcce5696f0-640.jpg",
+     "src": "sections/gallery/built/21fcce5696f0-1600.jpg",
+     "width": 1200,
+     "height": 891
+    },
+    {
+     "caption": "Fun at the photo booth",
+     "thumb": "sections/gallery/built/be6f46165707-640.jpg",
+     "src": "sections/gallery/built/be6f46165707-1600.jpg",
+     "width": 640,
+     "height": 480
+    },
+    {
+     "caption": "Costumes and carnival fun",
+     "thumb": "sections/gallery/built/0467d1558d03-640.jpg",
+     "src": "sections/gallery/built/0467d1558d03-1600.jpg",
+     "width": 1200,
+     "height": 801
+    },
+    {
+     "caption": "Celebrating Hanukkah",
+     "thumb": "sections/gallery/built/5a8cc81adf91-640.jpg",
+     "src": "sections/gallery/built/5a8cc81adf91-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "Dreidel time at Hanukkah",
+     "thumb": "sections/gallery/built/1197421b0c41-640.jpg",
+     "src": "sections/gallery/built/1197421b0c41-1600.jpg",
+     "width": 976,
+     "height": 1200
+    },
+    {
+     "caption": "Shaking the lulav and etrog on Sukkot",
+     "thumb": "sections/gallery/built/65d6786c826a-640.jpg",
+     "src": "sections/gallery/built/65d6786c826a-1600.jpg",
+     "width": 772,
+     "height": 1200
+    },
+    {
+     "caption": "Music and celebration",
+     "thumb": "sections/gallery/built/1b6931dcd6a3-640.jpg",
+     "src": "sections/gallery/built/1b6931dcd6a3-1600.jpg",
+     "width": 1200,
+     "height": 800
+    },
+    {
+     "caption": "Singing together",
+     "thumb": "sections/gallery/built/fc557976029b-640.jpg",
+     "src": "sections/gallery/built/fc557976029b-1600.jpg",
+     "width": 800,
+     "height": 1200
+    },
+    {
+     "caption": "Music at services",
+     "thumb": "sections/gallery/built/4f581841f105-640.jpg",
+     "src": "sections/gallery/built/4f581841f105-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "Rabbi Jonah Layman",
+     "thumb": "sections/gallery/built/699fa329d721-640.jpg",
+     "src": "sections/gallery/built/699fa329d721-1600.jpg",
+     "width": 480,
+     "height": 640
+    },
+    {
+     "caption": "Gathering in the sanctuary",
+     "thumb": "sections/gallery/built/d3e217138b70-640.jpg",
+     "src": "sections/gallery/built/d3e217138b70-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "Cooking together",
+     "thumb": "sections/gallery/built/21e613817917-640.jpg",
+     "src": "sections/gallery/built/21e613817917-1600.jpg",
+     "width": 1200,
+     "height": 1072
+    },
+    {
+     "caption": "Volunteers in the kitchen",
+     "thumb": "sections/gallery/built/261f6ee4ec8d-640.jpg",
+     "src": "sections/gallery/built/261f6ee4ec8d-1600.jpg",
+     "width": 1200,
+     "height": 772
+    }
+   ]
+  },
+  {
+   "title": "2022",
+   "when": "",
+   "photos": [
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/b694492481f3-640.jpg",
+     "src": "sections/gallery/built/b694492481f3-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/8b0c923e8b44-640.jpg",
+     "src": "sections/gallery/built/8b0c923e8b44-1600.jpg",
+     "width": 1200,
+     "height": 999
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/0193ffdea71a-640.jpg",
+     "src": "sections/gallery/built/0193ffdea71a-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/24a52d49a78c-640.jpg",
+     "src": "sections/gallery/built/24a52d49a78c-1600.jpg",
+     "width": 1200,
+     "height": 800
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/7e2aa7ac63f5-640.jpg",
+     "src": "sections/gallery/built/7e2aa7ac63f5-1600.jpg",
+     "width": 640,
+     "height": 427
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/1118f9d77b45-640.jpg",
+     "src": "sections/gallery/built/1118f9d77b45-1600.jpg",
+     "width": 559,
+     "height": 354
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/0402a20e8766-640.jpg",
+     "src": "sections/gallery/built/0402a20e8766-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/6a4a6a2b4392-640.jpg",
+     "src": "sections/gallery/built/6a4a6a2b4392-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/1c9f9102cd53-640.jpg",
+     "src": "sections/gallery/built/1c9f9102cd53-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/ef5d1123b640-640.jpg",
+     "src": "sections/gallery/built/ef5d1123b640-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/bb07607b980b-640.jpg",
+     "src": "sections/gallery/built/bb07607b980b-1600.jpg",
+     "width": 480,
+     "height": 640
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/29bd79c08157-640.jpg",
+     "src": "sections/gallery/built/29bd79c08157-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/4054809b5ee6-640.jpg",
+     "src": "sections/gallery/built/4054809b5ee6-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/193f7e17cf3a-640.jpg",
+     "src": "sections/gallery/built/193f7e17cf3a-1600.jpg",
+     "width": 908,
+     "height": 438
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/286c9de53b07-640.jpg",
+     "src": "sections/gallery/built/286c9de53b07-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/90f105a4a2f4-640.jpg",
+     "src": "sections/gallery/built/90f105a4a2f4-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/a450b51c216b-640.jpg",
+     "src": "sections/gallery/built/a450b51c216b-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/51bcc751c683-640.jpg",
+     "src": "sections/gallery/built/51bcc751c683-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/803af293c443-640.jpg",
+     "src": "sections/gallery/built/803af293c443-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/0ca942238453-640.jpg",
+     "src": "sections/gallery/built/0ca942238453-1600.jpg",
+     "width": 768,
+     "height": 1024
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/717a18c223ab-640.jpg",
+     "src": "sections/gallery/built/717a18c223ab-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/c4658ea7c583-640.jpg",
+     "src": "sections/gallery/built/c4658ea7c583-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/1780893b3acd-640.jpg",
+     "src": "sections/gallery/built/1780893b3acd-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/919d6b8858aa-640.jpg",
+     "src": "sections/gallery/built/919d6b8858aa-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/4ac051d7ccb4-640.jpg",
+     "src": "sections/gallery/built/4ac051d7ccb4-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/40c6b64190cb-640.jpg",
+     "src": "sections/gallery/built/40c6b64190cb-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/4c539f17ce89-640.jpg",
+     "src": "sections/gallery/built/4c539f17ce89-1600.jpg",
+     "width": 900,
+     "height": 1200
+    }
+   ]
+  },
+  {
+   "title": "2021",
+   "when": "",
+   "photos": [
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/7ae08667256f-640.jpg",
+     "src": "sections/gallery/built/7ae08667256f-1600.jpg",
+     "width": 1200,
+     "height": 750
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/4169c5649b4d-640.jpg",
+     "src": "sections/gallery/built/4169c5649b4d-1600.jpg",
+     "width": 1200,
+     "height": 750
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/caa12d8c87a3-640.jpg",
+     "src": "sections/gallery/built/caa12d8c87a3-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/91c411017278-640.jpg",
+     "src": "sections/gallery/built/91c411017278-1600.jpg",
+     "width": 1200,
+     "height": 750
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/9cf213a63be1-640.jpg",
+     "src": "sections/gallery/built/9cf213a63be1-1600.jpg",
+     "width": 1200,
+     "height": 750
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/c27bf65e139e-640.jpg",
+     "src": "sections/gallery/built/c27bf65e139e-1600.jpg",
+     "width": 479,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/51aec1694310-640.jpg",
+     "src": "sections/gallery/built/51aec1694310-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/1f226931e01f-640.jpg",
+     "src": "sections/gallery/built/1f226931e01f-1600.jpg",
+     "width": 600,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/36aa3f2f6853-640.jpg",
+     "src": "sections/gallery/built/36aa3f2f6853-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/71c0466af4bc-640.jpg",
+     "src": "sections/gallery/built/71c0466af4bc-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/f882fef9484f-640.jpg",
+     "src": "sections/gallery/built/f882fef9484f-1600.jpg",
+     "width": 1200,
+     "height": 675
+    }
+   ]
+  },
+  {
+   "title": "March 2020",
+   "when": "",
+   "photos": [
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/6b89165a09f7-640.jpg",
+     "src": "sections/gallery/built/6b89165a09f7-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/9e9619b66852-640.jpg",
+     "src": "sections/gallery/built/9e9619b66852-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/cc4f234a5689-640.jpg",
+     "src": "sections/gallery/built/cc4f234a5689-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/bc6a1c91b8af-640.jpg",
+     "src": "sections/gallery/built/bc6a1c91b8af-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/c32807022193-640.jpg",
+     "src": "sections/gallery/built/c32807022193-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/f6262b3d32ca-640.jpg",
+     "src": "sections/gallery/built/f6262b3d32ca-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/7054c464903d-640.jpg",
+     "src": "sections/gallery/built/7054c464903d-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/3b19814c22cc-640.jpg",
+     "src": "sections/gallery/built/3b19814c22cc-1600.jpg",
+     "width": 1200,
+     "height": 800
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/280666b67171-640.jpg",
+     "src": "sections/gallery/built/280666b67171-1600.jpg",
+     "width": 1200,
+     "height": 800
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/7473cdf2a82e-640.jpg",
+     "src": "sections/gallery/built/7473cdf2a82e-1600.jpg",
+     "width": 1200,
+     "height": 805
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/1d51f71114ab-640.jpg",
+     "src": "sections/gallery/built/1d51f71114ab-1600.jpg",
+     "width": 1200,
+     "height": 800
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/b8026ed031ed-640.jpg",
+     "src": "sections/gallery/built/b8026ed031ed-1600.jpg",
+     "width": 1200,
+     "height": 800
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/aab3d360f735-640.jpg",
+     "src": "sections/gallery/built/aab3d360f735-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/4c5fb7ca1283-640.jpg",
+     "src": "sections/gallery/built/4c5fb7ca1283-1600.jpg",
+     "width": 1200,
+     "height": 800
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/79a6a3ddb88d-640.jpg",
+     "src": "sections/gallery/built/79a6a3ddb88d-1600.jpg",
+     "width": 1200,
+     "height": 800
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/859a9927963f-640.jpg",
+     "src": "sections/gallery/built/859a9927963f-1600.jpg",
+     "width": 1200,
+     "height": 800
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/dddba96b273e-640.jpg",
+     "src": "sections/gallery/built/dddba96b273e-1600.jpg",
+     "width": 1200,
+     "height": 730
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/2ea337f52201-640.jpg",
+     "src": "sections/gallery/built/2ea337f52201-1600.jpg",
+     "width": 1200,
+     "height": 800
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/2c0e7f22194e-640.jpg",
+     "src": "sections/gallery/built/2c0e7f22194e-1600.jpg",
+     "width": 1200,
+     "height": 835
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/2c93dd4d6baf-640.jpg",
+     "src": "sections/gallery/built/2c93dd4d6baf-1600.jpg",
+     "width": 800,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/dc721e27909c-640.jpg",
+     "src": "sections/gallery/built/dc721e27909c-1600.jpg",
+     "width": 1200,
+     "height": 800
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/5f8d68afe9e8-640.jpg",
+     "src": "sections/gallery/built/5f8d68afe9e8-1600.jpg",
+     "width": 1200,
+     "height": 770
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/5d3c7892ab34-640.jpg",
+     "src": "sections/gallery/built/5d3c7892ab34-1600.jpg",
+     "width": 1200,
+     "height": 800
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/54f6b748f7a8-640.jpg",
+     "src": "sections/gallery/built/54f6b748f7a8-1600.jpg",
+     "width": 834,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/140327741862-640.jpg",
+     "src": "sections/gallery/built/140327741862-1600.jpg",
+     "width": 1200,
+     "height": 800
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/ff1a138e32b1-640.jpg",
+     "src": "sections/gallery/built/ff1a138e32b1-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/2226a6505755-640.jpg",
+     "src": "sections/gallery/built/2226a6505755-1600.jpg",
+     "width": 1200,
+     "height": 900
+    }
+   ]
+  },
+  {
+   "title": "February 2020",
+   "when": "",
+   "photos": [
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/25629f1f58b7-640.jpg",
+     "src": "sections/gallery/built/25629f1f58b7-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "A 4th grade girl making a bird feeder",
+     "thumb": "sections/gallery/built/4738a4239448-640.jpg",
+     "src": "sections/gallery/built/4738a4239448-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "4th & 5th grade students help kindergarten & 1st grade students make bird feeder",
+     "thumb": "sections/gallery/built/6f3bc5b32be2-640.jpg",
+     "src": "sections/gallery/built/6f3bc5b32be2-1600.jpg",
+     "width": 1200,
+     "height": 900
+    }
+   ]
+  },
+  {
+   "title": "October 2019",
+   "when": "",
+   "photos": [
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/326e73751338-640.jpg",
+     "src": "sections/gallery/built/326e73751338-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/8d576f63bc83-640.jpg",
+     "src": "sections/gallery/built/8d576f63bc83-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/a91d895e13b1-640.jpg",
+     "src": "sections/gallery/built/a91d895e13b1-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/8d97761fc295-640.jpg",
+     "src": "sections/gallery/built/8d97761fc295-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/9bbb5daa8882-640.jpg",
+     "src": "sections/gallery/built/9bbb5daa8882-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/2e7a7ffb6d60-640.jpg",
+     "src": "sections/gallery/built/2e7a7ffb6d60-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/727609e94dbd-640.jpg",
+     "src": "sections/gallery/built/727609e94dbd-1600.jpg",
+     "width": 900,
+     "height": 1200
+    }
+   ]
+  },
+  {
+   "title": "March 2019",
+   "when": "",
+   "photos": [
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/cd38e8ec5b72-640.jpg",
+     "src": "sections/gallery/built/cd38e8ec5b72-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/0e99fc8243c8-640.jpg",
+     "src": "sections/gallery/built/0e99fc8243c8-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/8a5c766a7504-640.jpg",
+     "src": "sections/gallery/built/8a5c766a7504-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/3019a8571070-640.jpg",
+     "src": "sections/gallery/built/3019a8571070-1600.jpg",
+     "width": 1154,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/747189865bd6-640.jpg",
+     "src": "sections/gallery/built/747189865bd6-1600.jpg",
+     "width": 1200,
+     "height": 908
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/f37361be320c-640.jpg",
+     "src": "sections/gallery/built/f37361be320c-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/c4ce90bab329-640.jpg",
+     "src": "sections/gallery/built/c4ce90bab329-1600.jpg",
+     "width": 1200,
+     "height": 897
+    }
+   ]
+  },
+  {
+   "title": "February 2019",
+   "when": "",
+   "photos": [
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/924a917d10ea-640.jpg",
+     "src": "sections/gallery/built/924a917d10ea-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/ee744a9900db-640.jpg",
+     "src": "sections/gallery/built/ee744a9900db-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/e2d41179d54d-640.jpg",
+     "src": "sections/gallery/built/e2d41179d54d-1600.jpg",
+     "width": 1200,
+     "height": 753
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/fa30440bb686-640.jpg",
+     "src": "sections/gallery/built/fa30440bb686-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/939727cc27d6-640.jpg",
+     "src": "sections/gallery/built/939727cc27d6-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/27edb01b3720-640.jpg",
+     "src": "sections/gallery/built/27edb01b3720-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/930ec59ebe50-640.jpg",
+     "src": "sections/gallery/built/930ec59ebe50-1600.jpg",
+     "width": 1200,
+     "height": 570
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/9265c5d4a4a8-640.jpg",
+     "src": "sections/gallery/built/9265c5d4a4a8-1600.jpg",
+     "width": 900,
+     "height": 1200
+    }
+   ]
+  },
+  {
+   "title": "December 2018",
+   "when": "",
+   "photos": [
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/c321dbe0c3de-640.jpg",
+     "src": "sections/gallery/built/c321dbe0c3de-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/0e7af652abc3-640.jpg",
+     "src": "sections/gallery/built/0e7af652abc3-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/6b022c8c8536-640.jpg",
+     "src": "sections/gallery/built/6b022c8c8536-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/e5afdc2f8b73-640.jpg",
+     "src": "sections/gallery/built/e5afdc2f8b73-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/7459cab0fb4c-640.jpg",
+     "src": "sections/gallery/built/7459cab0fb4c-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/fdf842afccd8-640.jpg",
+     "src": "sections/gallery/built/fdf842afccd8-1600.jpg",
+     "width": 1200,
+     "height": 635
+    }
+   ]
+  },
+  {
+   "title": "November 2018",
+   "when": "",
+   "photos": [
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/0d9376bf3f48-640.jpg",
+     "src": "sections/gallery/built/0d9376bf3f48-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/942b5b4722fe-640.jpg",
+     "src": "sections/gallery/built/942b5b4722fe-1600.jpg",
+     "width": 480,
+     "height": 640
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/2042db5d7e68-640.jpg",
+     "src": "sections/gallery/built/2042db5d7e68-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/28e02c22add0-640.jpg",
+     "src": "sections/gallery/built/28e02c22add0-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/50107f191e67-640.jpg",
+     "src": "sections/gallery/built/50107f191e67-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/347e7fa29b06-640.jpg",
+     "src": "sections/gallery/built/347e7fa29b06-1600.jpg",
+     "width": 1200,
+     "height": 784
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/8de3a49a54ab-640.jpg",
+     "src": "sections/gallery/built/8de3a49a54ab-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/e408d5f01fe4-640.jpg",
+     "src": "sections/gallery/built/e408d5f01fe4-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/5c586af38aed-640.jpg",
+     "src": "sections/gallery/built/5c586af38aed-1600.jpg",
+     "width": 1200,
+     "height": 900
+    }
+   ]
+  },
+  {
+   "title": "September–October 2018",
+   "when": "",
+   "photos": [
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/6822c5fbfe6b-640.jpg",
+     "src": "sections/gallery/built/6822c5fbfe6b-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/553c3a1577b6-640.jpg",
+     "src": "sections/gallery/built/553c3a1577b6-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/68ec9f17de5d-640.jpg",
+     "src": "sections/gallery/built/68ec9f17de5d-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/e41fa3d0cdfd-640.jpg",
+     "src": "sections/gallery/built/e41fa3d0cdfd-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "Teens at the Manna Food Drive",
+     "thumb": "sections/gallery/built/371775e98a58-640.jpg",
+     "src": "sections/gallery/built/371775e98a58-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/a35f6d7cd3a4-640.jpg",
+     "src": "sections/gallery/built/a35f6d7cd3a4-1600.jpg",
+     "width": 600,
+     "height": 640
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/b117d28d72d5-640.jpg",
+     "src": "sections/gallery/built/b117d28d72d5-1600.jpg",
+     "width": 480,
+     "height": 640
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/a05f1020dd4c-640.jpg",
+     "src": "sections/gallery/built/a05f1020dd4c-1600.jpg",
+     "width": 480,
+     "height": 640
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/1177c1852a61-640.jpg",
+     "src": "sections/gallery/built/1177c1852a61-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/0312065fe781-640.jpg",
+     "src": "sections/gallery/built/0312065fe781-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/9a0e1e572280-640.jpg",
+     "src": "sections/gallery/built/9a0e1e572280-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/98ec9bcdf7fc-640.jpg",
+     "src": "sections/gallery/built/98ec9bcdf7fc-1600.jpg",
+     "width": 1200,
+     "height": 1086
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/e13b4303d92c-640.jpg",
+     "src": "sections/gallery/built/e13b4303d92c-1600.jpg",
+     "width": 1200,
+     "height": 931
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/2a40aeb760bc-640.jpg",
+     "src": "sections/gallery/built/2a40aeb760bc-1600.jpg",
+     "width": 1200,
+     "height": 744
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/086743af47e5-640.jpg",
+     "src": "sections/gallery/built/086743af47e5-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/ff2b9aeec9ae-640.jpg",
+     "src": "sections/gallery/built/ff2b9aeec9ae-1600.jpg",
+     "width": 1200,
+     "height": 938
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/73dc8087a6ff-640.jpg",
+     "src": "sections/gallery/built/73dc8087a6ff-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/53dbc33cf4fc-640.jpg",
+     "src": "sections/gallery/built/53dbc33cf4fc-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/a3ba334253ea-640.jpg",
+     "src": "sections/gallery/built/a3ba334253ea-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/39d494177c21-640.jpg",
+     "src": "sections/gallery/built/39d494177c21-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/de6e531a72c7-640.jpg",
+     "src": "sections/gallery/built/de6e531a72c7-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/3c9c5eb67b19-640.jpg",
+     "src": "sections/gallery/built/3c9c5eb67b19-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/fd9a3555b692-640.jpg",
+     "src": "sections/gallery/built/fd9a3555b692-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/c4cd1c1bb159-640.jpg",
+     "src": "sections/gallery/built/c4cd1c1bb159-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/138575776fa3-640.jpg",
+     "src": "sections/gallery/built/138575776fa3-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/f9a5cf144956-640.jpg",
+     "src": "sections/gallery/built/f9a5cf144956-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/cdca5c6c63ae-640.jpg",
+     "src": "sections/gallery/built/cdca5c6c63ae-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/b4b71553c365-640.jpg",
+     "src": "sections/gallery/built/b4b71553c365-1600.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/2a32e14aaa65-640.jpg",
+     "src": "sections/gallery/built/2a32e14aaa65-1600.jpg",
+     "width": 1200,
+     "height": 900
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/9a4ce1e3d368-640.jpg",
+     "src": "sections/gallery/built/9a4ce1e3d368-1600.jpg",
+     "width": 600,
+     "height": 800
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/a014541d2376-640.jpg",
+     "src": "sections/gallery/built/a014541d2376-1600.jpg",
+     "width": 480,
+     "height": 640
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/e438d626145e-640.jpg",
+     "src": "sections/gallery/built/e438d626145e-1600.jpg",
+     "width": 640,
+     "height": 480
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/153d9fddea6a-640.jpg",
+     "src": "sections/gallery/built/153d9fddea6a-1600.jpg",
+     "width": 480,
+     "height": 640
+    }
+   ]
+  },
+  {
+   "title": "January–February 2018",
+   "when": "",
+   "photos": [
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/a717550c63df-640.jpg",
+     "src": "sections/gallery/built/a717550c63df-1600.jpg",
+     "width": 750,
+     "height": 528
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/2bff3b6d1490-640.jpg",
+     "src": "sections/gallery/built/2bff3b6d1490-1600.jpg",
+     "width": 750,
+     "height": 548
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/c0c66ee16696-640.jpg",
+     "src": "sections/gallery/built/c0c66ee16696-1600.jpg",
+     "width": 500,
+     "height": 442
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/ecae36626e98-640.jpg",
+     "src": "sections/gallery/built/ecae36626e98-1600.jpg",
+     "width": 1200,
+     "height": 675
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/5e46d3511d3f-640.jpg",
+     "src": "sections/gallery/built/5e46d3511d3f-1600.jpg",
+     "width": 675,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/96f0a45ddb18-640.jpg",
+     "src": "sections/gallery/built/96f0a45ddb18-1600.jpg",
+     "width": 1200,
+     "height": 675
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/3c2e11607cf1-640.jpg",
+     "src": "sections/gallery/built/3c2e11607cf1-1600.jpg",
+     "width": 1200,
+     "height": 675
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/557139443786-640.jpg",
+     "src": "sections/gallery/built/557139443786-1600.jpg",
+     "width": 675,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/736f23c6bfac-640.jpg",
+     "src": "sections/gallery/built/736f23c6bfac-1600.jpg",
+     "width": 675,
+     "height": 1200
+    }
+   ]
+  },
+  {
+   "title": "September 2017",
+   "when": "",
+   "photos": [
+    {
+     "caption": "Yom Ha'atzmaut",
+     "thumb": "sections/gallery/built/46a87d48ce25-640.jpg",
+     "src": "sections/gallery/built/46a87d48ce25-1600.jpg",
+     "width": 1200,
+     "height": 800
+    }
+   ]
+  },
+  {
+   "title": "August 2017",
+   "when": "",
+   "photos": [
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/193fd5e9bc95-640.jpg",
+     "src": "sections/gallery/built/193fd5e9bc95-1600.jpg",
+     "width": 600,
+     "height": 500
+    }
+   ]
+  },
+  {
+   "title": "January 2017",
+   "when": "",
+   "photos": [
+    {
+     "caption": "Hanukkah",
+     "thumb": "sections/gallery/built/ebd64b3be554-640.jpg",
+     "src": "sections/gallery/built/ebd64b3be554-1600.jpg",
+     "width": 1200,
+     "height": 759
+    },
+    {
+     "caption": "Hanukkah",
+     "thumb": "sections/gallery/built/01cb9dd30a1f-640.jpg",
+     "src": "sections/gallery/built/01cb9dd30a1f-1600.jpg",
+     "width": 1200,
+     "height": 800
+    },
+    {
+     "caption": "Hanukkah",
+     "thumb": "sections/gallery/built/b35f58c83003-640.jpg",
+     "src": "sections/gallery/built/b35f58c83003-1600.jpg",
+     "width": 800,
+     "height": 1200
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/29374cdf6851-640.jpg",
+     "src": "sections/gallery/built/29374cdf6851-1600.jpg",
+     "width": 480,
+     "height": 640
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/17726a48fbfe-640.jpg",
+     "src": "sections/gallery/built/17726a48fbfe-1600.jpg",
+     "width": 480,
+     "height": 640
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/186fcdb14226-640.jpg",
+     "src": "sections/gallery/built/186fcdb14226-1600.jpg",
+     "width": 480,
+     "height": 640
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/106e8d15bd01-640.jpg",
+     "src": "sections/gallery/built/106e8d15bd01-1600.jpg",
+     "width": 480,
+     "height": 640
+    },
+    {
+     "caption": "",
+     "thumb": "sections/gallery/built/a3996356be33-640.jpg",
+     "src": "sections/gallery/built/a3996356be33-1600.jpg",
+     "width": 640,
+     "height": 480
+    },
+    {
+     "caption": "Hanukkah",
+     "thumb": "sections/gallery/built/d00ce0c0e8db-640.jpg",
+     "src": "sections/gallery/built/d00ce0c0e8db-1600.jpg",
+     "width": 1200,
+     "height": 800
+    },
+    {
+     "caption": "Hanukkah",
+     "thumb": "sections/gallery/built/e43c8cbef26c-640.jpg",
+     "src": "sections/gallery/built/e43c8cbef26c-1600.jpg",
+     "width": 1200,
+     "height": 800
+    },
+    {
+     "caption": "Hanukkah",
+     "thumb": "sections/gallery/built/8ddbc4e78b71-640.jpg",
+     "src": "sections/gallery/built/8ddbc4e78b71-1600.jpg",
+     "width": 1200,
+     "height": 800
+    },
+    {
+     "caption": "Hanukkah",
+     "thumb": "sections/gallery/built/9444a0224dc8-640.jpg",
+     "src": "sections/gallery/built/9444a0224dc8-1600.jpg",
+     "width": 1200,
+     "height": 800
+    },
+    {
+     "caption": "Hanukkah",
+     "thumb": "sections/gallery/built/0af173b01525-640.jpg",
+     "src": "sections/gallery/built/0af173b01525-1600.jpg",
+     "width": 800,
+     "height": 1200
+    },
+    {
+     "caption": "Hanukkah",
+     "thumb": "sections/gallery/built/1175198ebb0b-640.jpg",
+     "src": "sections/gallery/built/1175198ebb0b-1600.jpg",
+     "width": 800,
+     "height": 1200
+    }
+   ]
+  },
+  {
+   "title": "August–October 2016",
+   "when": "",
+   "photos": [
+    {
+     "caption": "Sukkot",
+     "thumb": "sections/gallery/built/461e4a9222ff-640.jpg",
+     "src": "sections/gallery/built/461e4a9222ff-1600.jpg",
+     "width": 480,
+     "height": 640
+    },
+    {
+     "caption": "Our synagogue",
+     "thumb": "sections/gallery/built/28e2ad052fc3-640.jpg",
+     "src": "sections/gallery/built/28e2ad052fc3-1600.jpg",
+     "width": 900,
+     "height": 1200
+    }
+   ]
+  }
+ ]
 }
